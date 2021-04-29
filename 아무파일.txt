@@ -1,0 +1,26 @@
+1. 블루투스 통신 on
+
+2. 블루투스 연결 리스트 
+
+3. 블루투스 전송값 붙이기 
+
+ switch_bar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, final boolean isChecked) {
+
+                if (isChecked == true){
+                    bluetoothOn();
+
+                    listPairedDevices();
+
+                    if(mThreadConnectedBluetooth != null){
+                        mThreadConnectedBluetooth.write("1"); //여기를 수정
+
+                    }
+
+                }else {
+                    bluetoothOff();
+                }
+
+            }
+        });
